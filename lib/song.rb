@@ -28,10 +28,11 @@ class Song
   
   def self.artist
     @unique_artists = @@artists.uniq
+    @unique_artists
   end
   
   def self.genre_count
-    @@genre.each{|key| @genre_hash[key] += 1}
+    @@genres.each{|key| @genre_hash[key] += 1}
     @genre_hash
   end
 
