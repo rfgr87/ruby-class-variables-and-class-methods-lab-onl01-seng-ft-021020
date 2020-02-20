@@ -1,19 +1,19 @@
 class Song 
-  attr_accessor :song_name, :artist, :genre
+  attr_accessor :name, :artist, :genre
   @@count = 0
-  @@genre = []
+  @@genres = []
   @unique_genre = []
   @@artists = []
   @unique_artists = []
   @genre_hash = {}
   @artist_hash = {}
   
-  def initialize(song_name, artist, genre)
-    @song_name = song_name
+  def initialize(name, artist, genre)
+    @name = name
     @artist = artist
     @genre = genre
     @@count += 1
-    @@genre << genre
+    @@genres << genre
     @@artists << artist
   end
 
@@ -22,7 +22,7 @@ class Song
   end
   
   def self.genre
-    @unique_genre = @@genre.uniq
+    @unique_genre = @@genres.uniq
     @unique_genre
   end
   
